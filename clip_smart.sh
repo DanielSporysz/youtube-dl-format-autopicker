@@ -1,15 +1,15 @@
 #!/usr/bin/bash
 
-# this script asks you for a link to a YT video
-# then fetches all download formats available with command $ youtube-dl -F $LINKVAR
-# parses the code for the foramt .m4a and downloads it
+# this script asks for a link to a YT video
+# then fetches all available download formats with command $ youtube-dl -F $LINKVAR
+# parses the response for the format code for $FORMAT and downloads it
 SAVEPATH='./%(title)s.%(ext)s'
 FORMAT='.m4a'
 
 echo
 read -p 'Link to video: ' LINKVAR
 
-# TODO automatic grep for the foramt code for specified video format
+# TODO automate this step by parsing the response for the format code
 echo
 youtube-dl -F $LINKVAR
 
